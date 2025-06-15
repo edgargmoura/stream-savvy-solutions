@@ -1,12 +1,14 @@
 
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://your-project.supabase.co'
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'your-anon-key'
+// Usar valores padrão para desenvolvimento
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://placeholder.supabase.co'
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsYWNlaG9sZGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDA5OTUyMDAsImV4cCI6MTk1NjU3MTIwMH0.placeholder'
 
-// Check if we're in development and variables are not set
-if (import.meta.env.DEV && (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY)) {
-  console.warn('Supabase environment variables are not set. Using placeholder values for development.')
+// Verificar se estamos em desenvolvimento
+const isDevelopment = import.meta.env.DEV
+if (isDevelopment && supabaseUrl === 'https://placeholder.supabase.co') {
+  console.log('Executando em modo de desenvolvimento sem Supabase configurado.')
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
@@ -21,11 +23,12 @@ export interface ContactSubmission {
 }
 
 export async function submitContactForm(data: ContactSubmission) {
-  // Check if we're using placeholder values
-  if (supabaseUrl === 'https://your-project.supabase.co') {
-    console.warn('Supabase is not properly configured. Form submission skipped.')
-    // Return a mock success response for development
-    return [{ id: 'mock-id', ...data, created_at: new Date().toISOString() }]
+  // Se estivermos usando valores placeholder, simular sucesso
+  if (supabaseUrl === 'https://placeholder.supabase.co') {
+    console.log('Simulando envio de formulário:', data)
+    // Simular um pequeno delay
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    return [{ id: 'mock-' + Date.now(), ...data, created_at: new Date().toISOString() }]
   }
 
   const { data: result, error } = await supabase
