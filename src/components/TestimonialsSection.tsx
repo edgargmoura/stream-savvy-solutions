@@ -4,62 +4,63 @@ import React from 'react'
 const TestimonialsSection: React.FC = () => {
   const testimonials = [
     {
-      quote: "EGM Water TechSol transformed our water treatment efficiency by 40%. Their innovative approach and technical expertise are unmatched.",
+      quote: "EGM Water TechSol's consulting was fundamental in optimizing our effluent treatment system, reducing operational costs by 30% and ensuring environmental compliance.",
       author: "Maria Silva",
       role: "Operations Director",
-      company: "AquaTech Industries",
-      image: "https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      company: "Sustainable Textile Industry",
+      image: "https://images.unsplash.com/photo-1494790108755-2616c27b9bb9?w=400"
     },
     {
-      quote: "The automation system they implemented reduced our operational costs significantly while improving water quality standards.",
-      author: "John Rodriguez",
-      role: "Plant Manager",
-      company: "Clean Water Solutions",
-      image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      quote: "The implementation of the automation and remote monitoring system developed by Edgar's team revolutionized our water resource management, enabling real-time data-driven decisions.",
+      author: "Carlos Mendes",
+      role: "Environmental Secretary",
+      company: "City of Austin",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400"
     },
     {
-      quote: "Their commitment to sustainability and technical excellence makes them our go-to partner for environmental engineering projects.",
-      author: "Ana Costa",
-      role: "Environmental Engineer",
-      company: "EcoTech Corp",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      quote: "The technical training offered by EGM Water TechSol prepared our team to excellently manage our treatment station, resulting in more efficient and sustainable operation.",
+      author: "Ana Ferreira",
+      role: "Sustainability Manager",
+      company: "GreenBuild Construction",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400"
     }
   ]
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             What Our Clients Say
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Hear from industry leaders who trust EGM Water TechSol for their environmental engineering needs
+            We work in partnership with companies and institutions that value sustainability and technical excellence
           </p>
         </div>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-md border border-gray-100">
-              <div className="mb-4">
-                <svg className="h-8 w-8 text-blue-300" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                  <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+            <div
+              key={index}
+              className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <div className="mb-6">
+                <svg className="w-8 h-8 text-blue-600 mb-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
                 </svg>
+                <p className="text-gray-600 italic">"{testimonial.quote}"</p>
               </div>
-
-              <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
-
+              
               <div className="flex items-center">
-                <div className="h-10 w-10 rounded-full overflow-hidden mr-3">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.author}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+                <img 
+                  src={testimonial.image} 
+                  alt={testimonial.author}
+                  className="w-12 h-12 rounded-full object-cover mr-4"
+                />
                 <div>
-                  <p className="font-medium text-gray-900">{testimonial.author}</p>
-                  <p className="text-sm text-gray-500">{testimonial.role}, {testimonial.company}</p>
+                  <div className="font-semibold text-gray-900">{testimonial.author}</div>
+                  <div className="text-sm text-gray-600">{testimonial.role}</div>
+                  <div className="text-sm text-gray-500">{testimonial.company}</div>
                 </div>
               </div>
             </div>
