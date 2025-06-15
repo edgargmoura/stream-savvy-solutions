@@ -1,15 +1,15 @@
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import astro from '@astrojs/astro-vite-plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
-    astro()
+    react()
   ],
   server: {
-    port: 3000,
+    port: 8080,
+    host: "::",
     open: true
   },
   build: {
