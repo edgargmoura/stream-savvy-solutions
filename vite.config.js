@@ -20,11 +20,12 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: 'dist',
-    emptyOutDir: true,
+    sourcemap: true,
     rollupOptions: {
       output: {
         manualChunks: {
-          'vendor': ['react', 'react-dom'],
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom']
         }
       }
     }
