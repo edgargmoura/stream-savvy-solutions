@@ -1,10 +1,10 @@
 
 import React from 'react'
-import ContactForm from '../components/ContactForm'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import ContactForm from '../components/ContactForm'
 
-const ContactPage: React.FC = () => {
+const ContatoPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -22,9 +22,9 @@ const ContactPage: React.FC = () => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24 md:py-36">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Entre em Contato</h1>
             <p className="text-xl text-gray-300">
-              We're ready to help with personalized solutions for your environmental engineering and sanitation needs.
+              Estamos prontos para ajudar com soluções personalizadas para suas necessidades de engenharia ambiental e saneamento.
             </p>
           </div>
         </div>
@@ -42,17 +42,12 @@ const ContactPage: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-700">Phone</h3>
+                <h3 className="text-2xl font-bold text-slate-700">Telefone</h3>
               </div>
               
               <div className="space-y-4">
                 <div>
-                  <p className="text-slate-600 text-sm font-medium mb-1">Main Office:</p>
-                  <p className="text-xl font-semibold text-slate-800">(512) xxx-xxxx</p>
-                </div>
-                
-                <div>
-                  <p className="text-slate-600 text-sm font-medium mb-1">Technical Support:</p>
+                  <p className="text-slate-600 text-sm font-medium mb-1">Escritório Principal:</p>
                   <p className="text-xl font-semibold text-slate-800">(512) xxx-xxxx</p>
                 </div>
               </div>
@@ -71,13 +66,8 @@ const ContactPage: React.FC = () => {
               
               <div className="space-y-4">
                 <div>
-                  <p className="text-stone-600 text-sm font-medium mb-1">General Information:</p>
+                  <p className="text-stone-600 text-sm font-medium mb-1">Informações Gerais:</p>
                   <p className="text-xl font-semibold text-stone-800">info@egmwater.com</p>
-                </div>
-                
-                <div>
-                  <p className="text-stone-600 text-sm font-medium mb-1">Business Proposals:</p>
-                  <p className="text-xl font-semibold text-stone-800">sales@egmwater.com</p>
                 </div>
               </div>
             </div>
@@ -91,23 +81,16 @@ const ContactPage: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-zinc-700">Main Office</h3>
+                <h3 className="text-2xl font-bold text-zinc-700">Escritório Principal</h3>
               </div>
               
               <div className="space-y-4">
                 <div>
-                  <p className="text-zinc-600 text-sm font-medium mb-1">Address:</p>
+                  <p className="text-zinc-600 text-sm font-medium mb-1">Endereço:</p>
                   <p className="text-lg font-semibold text-zinc-800">
                     123 Lorem ipsum<br/>
                     Austin, TX 78701<br/>
-                    United States
-                  </p>
-                </div>
-                
-                <div>
-                  <p className="text-zinc-600 text-sm font-medium mb-1">Business Hours:</p>
-                  <p className="text-lg font-semibold text-zinc-800">
-                    Monday to Friday: 8:00 AM - 6:00 PM
+                    Estados Unidos
                   </p>
                 </div>
               </div>
@@ -121,10 +104,10 @@ const ContactPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Request a Consultation
+              Solicite uma Consulta
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Fill out the form below and our team will contact you within 24 hours
+              Preencha o formulário abaixo e nossa equipe entrará em contato em até 24 horas
             </p>
           </div>
           
@@ -137,4 +120,4 @@ const ContactPage: React.FC = () => {
   )
 }
 
-export default ContactPage
+export default ContatoPage
