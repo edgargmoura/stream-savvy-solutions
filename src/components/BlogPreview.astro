@@ -1,0 +1,69 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+const articles = [
+  {
+    title: "How IoT is revolutionizing water quality monitoring",
+    excerpt: "Connected sensors enable real-time monitoring and more efficient decision-making for water resource preservation.",
+    date: "April 9, 2025",
+    image: "blog_iot.png",
+    category: "Technology",
+    url: "https://www.waterhub.com.br/post/a-nova-era-do-tratamento-de-%C3%A1gua-intelig%C3%AAncia-artificial-e-iot-no-monitoramento-de-sistemas-h%C3%ADdricos"
+  },
+  {
+    title: "Biofilters: the natural solution for industrial wastewater treatment",
+    excerpt: "Biofiltration systems combine treatment efficiency with low operational cost and minimal environmental impact.",
+    date: "April 14, 2025",
+    image: "/blog_biofiltro.png",
+    category: "Sustainability",
+    url: "https://phsolucoesambientais.com.br/saneamento-basico/o-que-e-um-biofiltro-e-qual-sua-funcao-no-tratamento-de-esgoto/"
+  },
+  {
+    title: "Rust Inhibitors for Boilers: Key Components Explained",
+    excerpt: "Preventing rust isn't just about adding chemicals. It's about using the right corrosion inhibitor for your system conditions.",
+    date: "May 5, 2025",
+    image: "/blog_operando_caldeira.png",
+    category: "Knowledge",
+    url: "https://go2eti.com/blog/boiler-rust-inhibitor/"
+  }
+];
+---
+
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading 
+      title="Knowledge Center" 
+      subtitle="We share technical knowledge and insights on trends in environmental engineering and sanitation"
+      centered={true}
+    />
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+      {articles.map((article, index) => (
+        <a href={article.url} target="_blank" rel="noopener noreferrer" class="group" data-aos="fade-up" data-aos-delay={index * 100}>
+          <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col border border-gray-100">
+            <div class="relative h-48">
+              <img 
+                src={article.image} 
+                alt={article.title} 
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <span class="absolute top-3 left-3 bg-primary-500 text-white text-xs px-2 py-1 rounded">
+                {article.category}
+              </span>
+            </div>
+            
+            <div class="p-6 flex-grow">
+              <p class="text-sm text-gray-500 mb-2">{article.date}</p>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors">
+                {article.title}
+              </h3>
+              <p class="text-gray-600">
+                {article.excerpt}
+              </p>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

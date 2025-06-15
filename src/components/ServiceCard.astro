@@ -1,0 +1,47 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+  highlight?: 'gray' | 'slate' | 'zinc' | 'stone' | 'neutral';
+}
+
+const { title, description, image, url, highlight = 'gray' } = Astro.props;
+
+const highlightColors = {
+  gray: 'border-gray-300 bg-gray-50/30',
+  slate: 'border-slate-300 bg-slate-50/30',
+  zinc: 'border-zinc-300 bg-zinc-50/30',
+  stone: 'border-stone-300 bg-stone-50/30',
+  neutral: 'border-neutral-300 bg-neutral-50/30'
+};
+
+const highlightClass = highlightColors[highlight];
+---
+
+<a 
+  href={url} 
+  target="_blank" 
+  rel="noopener noreferrer"
+  class={`group flex flex-col h-full bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border-l-2 ${highlightClass}`}
+  data-aos="fade-up"
+>
+  <div class="relative h-32 overflow-hidden flex items-center justify-center">
+    <img 
+      src={image} 
+      alt={title} 
+      class="w-32 h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105"
+    />
+  </div>
+  
+  <div class="p-6 flex-grow text-center">
+    <h3 class="text-xl font-semibold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors duration-200">
+      {title}
+    </h3>
+    
+    <p class="text-gray-600 text-base">
+      {description}
+    </p>
+  </div>
+</a>
